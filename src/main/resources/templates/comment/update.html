@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Comment</title>
+    <link rel="stylesheet" href="/css/comment_update.css">
+</head>
+<body>
+<div class="update-comment-form">
+    <h2>Update Comment</h2>
+    <form th:action="@{/comment/update}" method="post">
+        <input type="hidden" name="id" th:value="${comment.id}">
+        <label for="comment" class="comment-label">Comment:</label>
+        <textarea id="comment" name="comment" class="comment-field" rows="3" th:text="${comment.comment}" required></textarea>
+
+        <div class="checkbox-label">
+            <input type="checkbox" id="checkedByModerator" name="checkedByModerator" th:checked="${comment.checkedByModerator}">
+            <label for="checkedByModerator">Checked by Moderator</label>
+        </div>
+
+        <button type="submit" class="submit-button">Update Comment</button>
+    </form>
+</div>
+
+<!-- "Go Back" button -->
+<button class="back-button" onclick="goBack()">Go Back</button>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+</body>
+</html>

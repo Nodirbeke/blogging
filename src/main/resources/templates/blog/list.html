@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Blog List</title>
+    <link rel="stylesheet" href="/css/blog_list.css">
+</head>
+<body>
+<div class="header">
+    <h1>Blog List</h1>
+</div>
+<a href="/blog/create" class="btn-check">Add New Blog</a>
+<ul>
+    <li th:each="blog : ${blogs}" class="blog">
+        <div class="blog-details">
+            <a th:href="@{/blog/details/{id}(id=${blog.id})}">
+                <h2 class="blog-title" th:text="${blog.title}"></h2>
+            </a>
+            <p class="blog-info"><span class="theme">Theme:</span> <span th:text="${blog.theme}"></span></p>
+            <p class="blog-info"><span class="view">View:</span> <span th:text="${blog.view}"></span></p>
+            <p class="blog-info"><span class="created-at">Created at:</span> <span th:text="${blog.createdAt}"></span></p>
+        </div>
+        <div class="blog-check">
+            <span class="blog-info"><strong>Checked:</strong> <span
+                    th:text="${blog.checkedByModerator ? 'Yes' : 'No'}"></span></span>
+            <form th:action="@{/blog/check/{id}(id=${blog.id})}" method="post" class="check-form">
+                <button type="submit" class="btn-check" th:classappend="${blog.checkedByModerator ? 'checked' : ''}">
+                    <span th:if="${blog.checkedByModerator}">Uncheck</span>
+                    <span th:unless="${blog.checkedByModerator}">Check</span>
+                </button>
+            </form>
+            <form th:action="@{/blog/delete/{id}(id=${blog.id})}" method="post"
+                  onsubmit="return confirm('Are you sure you want to delete this blog?');">
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+    </li>
+</ul>
+<div th:if="${totalPages > 1}">
+    <ul class="pagination">
+        <li th:class="${currentPage == 0} ? disabled">
+            <a th:href="@{/blog/list(page=0)}">&laquo;</a>
+        </li>
+        <li th:each="page : ${#numbers.sequence(0, totalPages - 1)}" th:class="${currentPage == page} ? active">
+            <a th:href="@{/blog/list(page=${page})}" th:text="${page + 1}"></a>
+        </li>
+        <li th:class="${currentPage == totalPages - 1} ? disabled">
+            <a th:href="@{/blog/list(page=${totalPages - 1})}">&raquo;</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

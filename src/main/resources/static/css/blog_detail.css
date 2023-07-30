@@ -1,0 +1,177 @@
+/* Add your custom CSS styling for the blog detail page here */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.header {
+    padding: 20px;
+    background-color: #4267B2; /* Facebook blue color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+    color: #fff;
+}
+
+.content {
+    margin: 20px auto;
+    max-width: 700px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.blog-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.blog-details {
+    margin-bottom: 20px;
+}
+
+.blog-details p {
+    font-size: 14px;
+    color: #888;
+    margin: 5px 0;
+}
+
+.blog-body {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.comments-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.comment {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.comment-meta {
+    font-size: 12px;
+    color: #888;
+}
+
+.comment p {
+    margin: 5px 0;
+}
+
+.new-comment-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.new-comment-form textarea {
+    resize: none;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.new-comment-form button {
+    background-color: #4267B2; /* Facebook blue color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.comment-like-count {
+    margin-right: 10px;
+    font-weight: bold;
+    color: #365899; /* Facebook like count color */
+}
+
+.comment-like-unlike form {
+    display: inline;
+}
+
+.comment-like-unlike button {
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #365899; /* Facebook like and unlike button color */
+    background-color: transparent;
+    border: none;
+}
+
+.comment-like-unlike button:hover {
+    text-decoration: underline;
+}
+
+.comment-like-unlike button:active,
+.comment-like-unlike button:focus {
+    outline: none;
+}
+
+.comment-meta strong {
+    margin-right: 5px;
+}
+
+/* Pagination styles */
+.pagination {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination a, .pagination span {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #365899; /* Facebook link color */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.pagination a:hover {
+    background-color: #007bff; /* Facebook blue color */
+    color: #fff;
+}
+
+.pagination .active a {
+    background-color: #007bff; /* Facebook blue color */
+    color: #fff;
+}
+
+.pagination .disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}

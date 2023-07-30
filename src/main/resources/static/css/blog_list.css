@@ -1,0 +1,112 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.header {
+    padding: 20px;
+    background-color: #4267B2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+    color: #fff;
+}
+
+.blog {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.blog-details {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.blog-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 5px;
+    color: #365899;
+}
+
+.blog-info {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+}
+
+.blog-check {
+    display: flex;
+    align-items: center;
+}
+
+.btn-check {
+    margin-left: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.btn-check.checked {
+    background-color: #28a745;
+}
+
+.btn-check:hover {
+    background-color: #0056b3; }
+
+.pagination {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination a, .pagination span {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #365899;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.pagination a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pagination .active a {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pagination .disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
